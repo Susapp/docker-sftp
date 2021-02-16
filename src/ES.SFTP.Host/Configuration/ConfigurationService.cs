@@ -76,10 +76,11 @@ namespace ES.SFTP.Host.Configuration
             config.Global.Chroot ??= new ChrootDefinition();
             config.Global.HostKeys ??= new HostKeysDefinition();
             config.Global.Hooks ??= new HooksDefinition();
+            config.Global.Port ??= new string();
 
             if (string.IsNullOrWhiteSpace(config.Global.Chroot.Directory)) config.Global.Chroot.Directory = "%h";
             if (string.IsNullOrWhiteSpace(config.Global.Chroot.StartPath)) config.Global.Chroot.StartPath = null;
-
+            if (string.IsNullOrWhiteSpace(config.Global.Port)) config.Global.Port = "22";
 
             config.Users ??= new List<UserDefinition>();
 

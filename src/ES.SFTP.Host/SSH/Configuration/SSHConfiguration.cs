@@ -13,6 +13,7 @@ namespace ES.SFTP.Host.SSH.Configuration
         public string HostKeyAlgorithms { get; set; }
         public string KexAlgorithms { get; set; }
         public string MACs { get; set; }
+        public string Port { get; set; }
 
         public override string ToString()
         {
@@ -26,6 +27,9 @@ namespace ES.SFTP.Host.SSH.Configuration
             builder.AppendLine("# Host Keys");
             builder.AppendLine("HostKey /etc/ssh/ssh_host_ed25519_key");
             builder.AppendLine("HostKey /etc/ssh/ssh_host_rsa_key");
+            builder.AppendLine();
+            builder.AppendLine("#Start ssh-service on port:);
+            builder.AppendLine($"Port {Port}");
             builder.AppendLine();
             builder.AppendLine("# Cryptographic policy");
             if (!string.IsNullOrWhiteSpace(Ciphers)) builder.AppendLine($"Ciphers {Ciphers}");

@@ -14,5 +14,6 @@ namespace ES.SFTP.Host.Configuration.Elements
         public string HostKeyAlgorithms { get; set; }
         public string KexAlgorithms { get; set; }
         public string MACs { get; set; }
+        public string Port { get; set;}
     }
 }
